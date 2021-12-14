@@ -2,7 +2,9 @@ body{
  font-family: 'Roboto', sans-serif;
  color: #212121;
  letter-spacing: 0.03em;
-
+ font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
 }
 :root{
 --brand-color: #2196F3
@@ -114,31 +116,58 @@ list-style: none;
 }
 
 .contacts-section .contact{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+   
     letter-spacing: 0.02em;
     text-decoration: none; 
     color: #757575;
-    display: block;
     padding-top: 32px;
     padding-bottom: 32px;
 }
-
+.contact{
+display: flex;
+align-items: center;
+}
 .contact:focus,
 .contact:hover{
     color: var(--brand-color);
+       }
 
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
+.contact-icon:focus,
+.contact-icon:hover {
+    fill: var(--brand-color);
+    }
+
+
 /* Банер */
 
+.overlay {
+
+}
 .section-decision{
    
     text-align: center;
-    background: #2F303A;
-
+}
+.overlay{ 
     padding-top: 200px;
-    padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+    min-height: 600px;
+
+   background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(4, 4, 5, 0.4)
+      ),
+      url("../photo/overlay.jpg");
+    background-color:  #2f303a;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .decision{
@@ -148,8 +177,8 @@ list-style: none;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #fff;
-
     margin-bottom: 30px;
+ 
 }
 .decision-button{
  background-color: var(--brand-color);
@@ -191,7 +220,16 @@ flex-basis: calc(100% / 4 - 30px);
   margin-top: 30px;
   margin-left: 30px;
 }
+.feature-thumb{
+display: flex;
+  height: 120px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
 
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
 .feature-title{
     
     font-size: 14px;
@@ -246,7 +284,7 @@ flex-basis: calc(100% / 4 - 30px);
     
 }
 
-.team-title {
+.team-title, .client-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -292,6 +330,79 @@ padding-bottom: 30px;
     color: #757575;
     
 }
+.social-list {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.social-list .social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-icon {
+  fill: #afb1b8;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: #fff;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--brand-color);
+  border-radius: 50%;
+}
+
+/*Постоянные клиенты*/
+
+.section-client{
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * 30px);
+  margin-left: calc(-1 * 30px);
+}
+
+.client-list > .client-item {
+  flex-basis: calc(100% / 6 - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.client-icon {
+  fill: #afb1b8;
+}
+
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--brand-color);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid var(--brand-color));
+}
 
 /*Футер*/
 .section-footer{
@@ -327,8 +438,57 @@ margin-top: 9px;
 .mail , .tel{
   margin-top: 9px;
 }
+.footer-thumb {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 70px;
+  align-content: flex-start;
+}
 
+.title-light {
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.14;
+  font-style: normal;
+}
+.footer-soc-list {
+  display: flex;
+  align-items: center;
+}
+.social-list {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
 
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.social-icon.secondary {
+  fill: #fff;
+}
+
+.social-link.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.social-link.secondary:hover,
+.social-link.secondary:focus {
+  background-color: var(--brand-color);
+}
+
+.footer-soc-list .social-item:not(:last-child) {
+  margin-right: 10px;
+}
 /*Портфолио*/
 
 /*Кнопки-навигации*/
@@ -381,6 +541,11 @@ background-color: var(--brand-color);
 }
 .flex-element .list .btn {
   margin-bottom: 50px;
+}
+.flex-element:hover,
+.flex-element:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);;
 }
 .content-project {
   padding-top: 20px;
